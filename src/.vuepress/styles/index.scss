@@ -1,0 +1,45 @@
+// place your custom styles here
+.blog-home{
+    .article{
+        border-radius: 8px;
+    }
+}
+
+.imgcenter{
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+//  字体动态渐变色
+@mixin ceel-jianbian {
+    // letter-spacing: 0.2rem;
+    // font-size: 1.5rem;
+    background-image: -webkit-linear-gradient(left, #0a718b, #eedb0c 25%, #0a718b 50%, #eedb0c 75%, #0a718b);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-background-size: 200% 100%;
+    -webkit-animation: maskedAnimation 4s infinite linear;
+}
+@keyframes maskedAnimation {
+    0% { background-position: 0 0; }
+    100% { background-position: -100% 0; }
+}
+//  end
+
+
+.blog-hero h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    @include ceel-jianbian;
+    font-size: 3rem!important;
+}
+
+
+.blog-hero p{
+    font-family: "Arial",
+        "Microsoft YaHei",
+        "黑体",
+        "宋体",
+        sans-serif;
+        @include ceel-jianbian;
+        font-size: 1.5rem !important;
+}
